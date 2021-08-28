@@ -1,0 +1,42 @@
+#wrapper {
+    width: 1920px;
+    overflow: hidden; /* add this to contain floated children */
+    overflow-y: hidden;
+}
+#div1 {
+    width: 1000px;
+    float:left; /* add this */
+}
+#div2 {
+    position:relative; 
+    left:-130px; 
+    top:-350px;
+}
+.title1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 70px;
+    margin-left: 100px;
+    margin-top: 150px;
+    color:#6BB37A;
+}
+.title2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 70px;
+    margin-left: 100px;
+    color:#6BB37A;
+    
+}
+.desc{
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    margin-left: 100px;
+    color: #707070;
+}
+.image{
+    margin-left: 1000px;
+    margin-top: -100px;
+    width: 1000px;
+    height: 600px;
+    border-radius: 10px;
+    
+}

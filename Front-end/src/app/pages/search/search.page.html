@@ -1,0 +1,51 @@
+<ion-content>
+  <navbar></navbar>
+  <ion-input placeholder="search" [(ngModel)]="searchInput" (ionChange)='changeSearchQuery($event.target.value)'></ion-input>
+
+<div *ngIf="!isOpen" class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  The stock market is not currently open, orders will only be processed once the market opens again.
+</div>
+<div class="refresh">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  Prices and orders are being processed every 10 mins!
+</div>
+
+  <div class="container">
+    <div class="row">
+      <p class="symbol">Symbol</p>
+      <p class="company-name">Company Name</p>
+      <p class="price">Price</p>
+      <p class="open">Open</p>
+      <p class="high">High</p>
+      <p class="low">Low</p>
+      <p class="previous-close">Previous Close</p>
+      <p class="change-percent">Change Percent</p>
+      <p class="change">Change</p>
+    </div>
+    <ion-list>
+    <div class="row" *ngFor="let x of data | filter:filterTerm; let i as index">
+        <p class="symbol">{{x.symbol}}</p>
+        <p class="company-name">{{x.companyName}}</p>
+        <p class="price">${{x.price}}</p>
+        <p class="open">${{x.open}}</p>
+        <p class="high">${{x.high}}</p>
+        <p class="low">${{x.low}}</p>
+        <p class="previous-close">${{x.previousClose}}</p>
+        <p class="change-percent" *ngIf="x.color==1" style="color:green;">{{x.changePercent}}%</p>
+        <p class="change" *ngIf="x.color==1" style="color:green;">${{x.change}}</p>
+        <p class="change-percent" *ngIf="x.color==0" style="color:red;">{{x.changePercent}}%</p>
+        <p class="change" *ngIf="x.color==0" style="color:red;">-${{x.change}}</p>
+        <p><ion-button (click)="presentModal(x.symbol)">BUY</ion-button></p>
+        <p><ion-button (click)="addToWatchlist(x.symbol)">ADD TO WATCHLIST</ion-button></p>
+        
+    </div>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  </div>
+  <!-- <ion-button (click)="loadMore()">Load More</ion-button> -->
+
+</ion-content>

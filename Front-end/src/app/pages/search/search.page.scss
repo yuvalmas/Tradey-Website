@@ -1,0 +1,64 @@
+.searchbar{
+    --background: white;
+    --color: black;
+}
+.company-name{
+    width: 200px;
+}
+.row{
+    display: flex;
+}
+.symbol{
+    margin-left: 2%;
+    width: 10%;
+}
+.company-name{
+    width: 10%;
+}
+.price{
+    width: 10%;
+}
+.open{
+    width: 10%;
+}
+.high{
+    width: 10%;
+}
+.low{
+    width: 10%;
+}
+.previous-close{
+    width: 10%;
+}
+.change-percent{
+    width: 7%;
+}
+.change{
+    width: 5%;
+}
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.refresh {
+    padding: 20px;
+    background-color: #053fff;
+    color: white;
+}

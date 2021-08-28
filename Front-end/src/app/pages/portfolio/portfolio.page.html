@@ -1,0 +1,67 @@
+<ion-content>
+<navbar></navbar>
+<div *ngIf="!isOpen" class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  The stock market is not currently open, orders will only be processed once the market opens again.
+</div>
+<div class="refresh">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  Don't see your new stock? Prices and orders are being processed every 10 mins!
+</div>
+<div class="balances">
+  <div class="cash-balance">
+    <h1>Cash Balance</h1>
+    <h1>{{this.currentBalanceText}}</h1>
+  </div>
+  <div class="vertical-line" style="height: 100px;"></div>
+  <div>
+    <h1>Balance On Hold</h1>
+    <h1>{{this.onHoldText}}</h1>
+  </div>
+  <div class="vertical-line" style="height: 100px;"></div>
+  <div>
+    <h1>Total Net Worth</h1>
+    <h1>{{this.totalBalanceText}}</h1>
+  </div>
+</div>
+<div id="spacer"></div>
+<div style="display: flex;">
+  <div style="flex-grow: 3;"></div>
+  <div style="margin-right: 1.5%;"><a style="color: white;"(click)="switchToTransactions()">Transactions history</a></div>
+</div>
+
+<div *ngIf="!hasPortfolio" class="none">
+  <h1 class="dont-own">YOU DO NOT OWN ANY STOCKS.</h1>
+  <h2 class="dont-own">PLEASE PURCHASE STOCKS.</h2>
+</div>
+<table *ngIf="hasPortfolio">
+  <tr>
+    <th>Name</th>
+    <th>Symbol</th>
+    <th>Avg cost</th>
+    <th>Amount</th>
+    <th>On Hold</th>
+    <th>Current Price</th>
+    <th>Market Value</th>
+    <th>Net P/L</th>
+    <th>Net P/L%</th>
+    <th>Sell</th>
+
+  </tr>
+  <tr *ngFor="let data of data; let i as index">
+    <td>{{data.companyName}}</td>
+    <td>{{data.symbol}}</td>
+    <td>${{data.priceBoughtAt}}</td>
+    <td>{{data.amount}}</td>
+    <td>{{data.onHold}}</td>
+    <td>${{data.currentPrice}}</td>
+    <td>${{data.marketValue}}</td>
+    <td *ngIf="data.color==1" style="color:green;">{{data.netPLPercent}}%</td>
+    <td *ngIf="data.color==1" style="color:green;">${{data.netPL}}</td>
+    <td *ngIf="data.color==0" style="color:red;">{{data.netPLPercent}}%</td>
+    <td *ngIf="data.color==0" style="color:red;">-${{data.netPL}}</td>
+    <td><ion-button (click)="presentModal(data.symbol, data.amount, data.onHold)">SELL</ion-button></td>
+  </tr>
+</table>
+
+  

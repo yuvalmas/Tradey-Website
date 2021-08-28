@@ -1,0 +1,41 @@
+table, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    color: black;
+    line-height: 40px;
+    text-align: center;
+    text-align: center;
+}
+th{
+    font-size: large;
+    line-height: 40px;
+    text-align: center;
+}
+table{
+    width: 100%;
+    background-color: white;
+}
+#spacer{
+    margin-top: 4%;
+}
+
+.your-rank{
+    display: flex;
+    justify-content: space-between;
+}
+#table{
+    width: 60%;
+    margin-left: 20%;
+}
+.your-rank{
+    margin-left:2%;
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 500;
+    display: inline-block;
+    color: grey;
+    border-bottom: 4px solid grey;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

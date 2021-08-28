@@ -1,0 +1,37 @@
+
+<div class="container">
+  
+  <h1>Balance</h1>
+  <div class="balance">
+    <div class="cash-balance">
+      <h3>Cash balance:</h3>
+      <p>{{cashBalance}}</p>
+    </div>
+  <div class=buying-power>
+  <h3>Buying power:</h3>
+  <p>{{buyingPower}}</p>
+</div>
+</div>
+  <hr>
+  <div class="buy-template">
+    <h1 style="display: flex; flex-direction: column; text-align: center;"class="header-text">BUY</h1>
+    <label>Symbol: </label>
+    <input type="text" value="{{ value }}" readonly>
+    <label>Amount: </label>
+    <input name="num" 
+    [(ngModel)]="amount"
+      type="number"
+      placeholder="Amount"
+      min="1"
+      step="1"
+      onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+    <label>Price: </label>
+    <input placeholder="Price"
+    min=1
+    [(ngModel)]="price"
+    onkeypress="return event.charCode >= 46 && event.charCode <= 57">
+    <label>Limit: </label>
+    <input [(ngModel)]="date" type="date" id="birthday" name="birthday" min="{{this.date1}}">
+    <ion-button (click)="submit()" class="submit-button" color="primary">Submit</ion-button>
+  </div>
+</div>

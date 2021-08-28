@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <div class="header-content-container">
+      <img (click)="sendToHome()" class="logo" src="assets/logo.png" alt="your image">
+      <div class="buttons-container">
+      <ion-button (click)="sendToSearch()" *ngIf="this.router.url != '/search' && isLoggedIn==true" class="stocks-btn">Stocks Search</ion-button>
+      <ion-button (click)="sendToWatchlist()" *ngIf="this.router.url != '/watch-list' && isLoggedIn==true" class="watchlist-btn">Watchlist</ion-button>
+      <ion-button (click)="sendToPortfolio()" *ngIf="this.router.url != '/portfolio' && isLoggedIn==true" class="portfolio-btn">Portfolio</ion-button>
+      <ion-button (click)="sendToLeaderboard()" *ngIf="this.router.url != '/leaderboard' && isLoggedIn==true" class="leaderboard-btn">Leaderboard</ion-button>
+      <ion-button (click)="submit()" class="login-btn">{{getLoginButtonText()}}</ion-button>
+    </div>
+    </div>
+  </ion-toolbar>
+</ion-header>

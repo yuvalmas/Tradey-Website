@@ -1,0 +1,36 @@
+<ion-content>
+  <navbar></navbar>
+  <div *ngIf="!isOpen" class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    The stock market is not currently open, orders will only be processed once the market opens again.
+  </div>
+  <div class="refresh">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    Prices and orders are being processed every 10 mins!
+  </div>
+  <div id="spacer"></div>
+  <div *ngIf="!hasWatchlist" class="none">
+    <h1>YOU DO NOT HAVE ANY STOCKS IN YOUR WATCHLIST.</h1>
+    <h2>GO TO STOCKS SEARCH TO ADD STOCKS TO WATCHLIST.</h2>
+  </div>
+  <div class="container" *ngIf="hasWatchlist">
+    <div class="row">
+      <p class="symbol">Symbol</p>
+      <p class="price">Current Price</p>
+      <p class="dailypl">Daily P/L%</p>
+      <p class="daily">Daily P/L</p>
+      <p class="buy">Buy</p>
+      <p class="remove-from-watchlist">Remove from watchlist</p>
+    </div>
+    <div class="row" *ngFor="let x of data; let i=index">
+      <p class="symbol">{{x.symbol}}</p>
+      <p class="price">${{x.price}}</p>
+      <p class="dailypl" *ngIf="x.color==1" style="color:green;">{{x.changePercent}}%</p>
+      <p class="daily" *ngIf="x.color==1" style="color:green;">${{x.change}}</p>
+      <p class="dailypl" *ngIf="x.color==0" style="color:red;">{{x.changePercent}}%</p>
+      <p class="daily" *ngIf="x.color==0" style="color:red;">-${{x.change}}</p>
+      <p class="buy"><ion-button (click)="presentModal(x.symbol)" >Buy</ion-button></p>
+      <p class="remove-from-watchlist" (click)="removeFromWatchlist(x.symbol, i)">&#10006;</p>
+    </div>
+  </div>
+</ion-content>

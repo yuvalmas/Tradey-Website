@@ -1,0 +1,80 @@
+<navbar></navbar>
+
+<div class="none" *ngIf="!hasActive && !hasCompleted && !hasCancelled">
+    <h1 class="dont-own">YOU DO NOT HAVE ANY ORDERS.</h1>
+    <h2 class="dont-own">PLEASE CREATE ORDERS.</h2>
+</div>
+    <div class="page">
+        
+        <div *ngIf="hasActive">
+            <p id="active-transactions">Active transactions:</p>
+            <div class="container">
+                <div class="row">
+                    <p class="order-type">Order Type</p>
+                    <p class="symbol">Symbol</p>
+                    <p class="wanted-price">Wanted Price</p>
+                    <p class="amount">Amount</p>
+                    <p class="limit">Limit</p>
+                    <p class="order-date">Order Created</p>
+                    <p class="cancel-order">Cancel Order</p>
+                </div>
+                <div class="row" *ngFor="let x of active; let i=index">
+                    <p class="order-type">{{x.orderType}}</p>
+                    <p class="symbol">{{x.symbol}}</p>
+                    <p class="wanted-price">{{financial(x.wantedPrice)}}</p>
+                    <p class="amount">{{x.amount}}</p>
+                    <p class="limit">{{x.limit}}</p>
+                    <p class="order-date">{{x.orderDate}}</p>
+                    <p class="order-date">
+                        <ion-button (click)="cancelOrder(x.id, x.orderType, x.symbol, x.wantedPrice, x.amount, i)">Cancel
+                            Order</ion-button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="hasCompleted">
+            <p id="completed-transactions">Completed transactions:</p>
+            <div class="container">
+                <div class="row">
+                    <p class="order-type1">Order Type</p>
+                    <p class="symbol1">Symbol</p>
+                    <p class="wanted-price1">Wanted Price</p>
+                    <p class="amount1">Amount</p>
+                    <p class="limit1">Limit</p>
+                    <p class="order-date1">Order Created</p>
+                    <p class="transaction-price1">Transaction Price</p>
+                    <p class="transaction-amount1">Transaction Amount</p>
+                </div>
+                <div class="row" *ngFor="let x of completed">
+                    <p class="order-type1">{{x.orderType}}</p>
+                    <p class="symbol1">{{x.symbol}}</p>
+                    <p class="wanted-price1">{{financial(x.wantedPrice)}}</p>
+                    <p class="amount1">{{x.amount}}</p>
+                    <p class="limit1">{{x.limit}}</p>
+                    <p class="order-date1">{{x.orderDate}}</p>
+                    <p class="transaction-price1">{{financial(x.transactionPrice)}}</p>
+                    <p class="transaction-amount1">{{financial(x.transactionAmount)}}</p>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="hasCancelled">
+            <p id="cancelled-transactions">Cancelled transactions:</p>
+            <div class="container">
+                <div class="row">
+                    <p class="order-type-c">Order Type</p>
+                    <p class="symbol-c">Symbol</p>
+                    <p class="wanted-price-c">Wanted Price</p>
+                    <p class="amount-c">Amount</p>
+                    <p class="limit-c">Limit</p>
+                    <p class="order-date-c">Order Created</p>
+                </div>
+                <div class="row" *ngFor="let x of cancelled">
+                    <p class="order-type-c">{{x.orderType}}</p>
+                    <p class="symbol-c">{{x.symbol}}</p>
+                    <p class="wanted-price-c">{{financial(x.wantedPrice)}}</p>
+                    <p class="amount-c">{{x.amount}}</p>
+                    <p class="limit-c">{{x.limit}}</p>
+                    <p class="order-date-c">{{x.orderDate}}</p>
+                </div>
+            </div>
+        </div>
+    </div>

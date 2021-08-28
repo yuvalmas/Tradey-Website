@@ -1,0 +1,100 @@
+#spacer{
+    margin-top: 4%;
+}
+.row{
+    display: flex;
+    background-color: white;
+}
+.symbol{
+    border: 2px solid black;
+    color: black;
+    width: 15%;
+    line-height: 40px;
+    text-align: center;
+    margin-left: 10%;
+}
+.price{
+    text-align: center;
+    border: 2px solid black;
+    color: black;
+    line-height: 40px;
+    text-align: center;
+    width: 15%;
+}
+.dailypl{
+    text-align: center;
+    border: 2px solid black;
+    color: black;
+    line-height: 40px;
+    text-align: center;
+    width: 15%;
+}
+.daily{
+    text-align: center;
+    border: 2px solid black;
+    color: black;
+    line-height: 40px;
+    text-align: center;
+    width: 15%;
+}
+.buy{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    color: black;
+    line-height: 40px;
+    text-align: center;
+    width: 15%;
+}
+.remove-from-watchlist{
+    text-align: center;
+    border: 2px solid black;
+    color: black;
+    line-height: 40px;
+    text-align: center;
+    width: 10%;
+}
+p{
+    margin: 0;
+}
+.none{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+h1{
+    color: #565e58;
+    font-weight: bold;
+}
+h2{
+    color: #565e58;
+    font-weight: bold;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+.refresh {
+    padding: 20px;
+    background-color: #053fff;
+    color: white;
+}

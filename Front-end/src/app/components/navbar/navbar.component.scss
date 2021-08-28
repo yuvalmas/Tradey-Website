@@ -1,0 +1,37 @@
+.header-content-container{
+    display: flex;
+}
+.toolbar{
+    --background: #6BB37A;
+    color: #9cdcf0;
+}
+.login-btn{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.stocks-btn{
+    --background: #6BB37A;
+}
+.watchlist-btn{
+    --background: #6BB37A;
+    margin-left: 10px;
+}
+.portfolio-btn{
+    --background: #6BB37A;
+    margin-left: 10px;
+}
+.leaderboard-btn{
+    --background: #6BB37A;
+    margin-left: 10px;
+}
+
+.logo{
+    width: 200px;
+}
+.buttons-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+}
+

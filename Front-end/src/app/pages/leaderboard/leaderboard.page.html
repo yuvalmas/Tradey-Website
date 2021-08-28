@@ -1,0 +1,39 @@
+<ion-content>
+  <navbar></navbar>
+  <div id="spacer"></div>
+  <table id="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>User</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of data; index as i">
+        <td>{{i+1}}</td>
+        <td>{{data.nickname}}</td>
+        <td>{{currencyFormat(data.money)}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!topTen">
+    <h1 class="your-rank">Your Rank:</h1>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>User</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of data1; index as i">
+          <td>{{data1[0].level}}</td>
+          <td>{{data1[0].nickname}}</td>
+          <td>{{currencyFormat(data1[0].money)}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>

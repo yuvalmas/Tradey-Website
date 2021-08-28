@@ -1,0 +1,44 @@
+.container{
+    margin: 3%;
+    height: 100%;
+}
+
+.buy-template{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    border: 1px solid lightgray;
+    // color: black;
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+
+.header{
+    font-size: 23px;
+}
+
+.change-template-link{
+    margin-bottom: 3%;
+}
+
+.submit-btn{
+    margin-top: 2%;
+}
+
+hr {
+    border: 0;
+    transform: rotate(0deg);
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:#FFFF00;
+    height: 1px;
+}
+.buying-power{
+    margin-left: 3%;
+}
+.balance{
+    display: flex;
+    justify-content: space-evenly;
+}

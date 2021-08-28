@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="buy-template">
+    <h1 style="display: flex; flex-direction: column; text-align: center;"class="header-text">SELL</h1>
+    <label>Symbol: </label>
+    <input type="text" value="{{ symbol }}" readonly>
+    <label>Amount: </label>
+    <input name="amount" 
+    [(ngModel)]="amount"
+      type="number"
+      placeholder="Amount"
+      min="1"
+      step="1"
+      id="amount"
+      max="{{max}}"
+      onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+      required>
+    <label>Price: </label>
+    <input placeholder="Price"
+    min=1
+    [(ngModel)]="price"
+    id="price"
+    onkeypress="return event.charCode >= 46 && event.charCode <= 57"
+    required>
+    <label>Limit: </label>
+    <input [(ngModel)]="date" type="date" id="date" name="birthday" min="{{this.date1}}" required>
+    <ion-button (click)="submit()" class="submit-button" color="primary">Submit</ion-button>
+  </div>
+</div>

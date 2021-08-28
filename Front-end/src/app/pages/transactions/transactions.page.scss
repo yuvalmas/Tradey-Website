@@ -1,0 +1,110 @@
+#spacer{
+    margin-top: 4%;
+}
+#active-transactions{
+    padding-left: 1%;
+    color: gray;
+}
+.row{
+    display: flex;
+}
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 98%;               
+    background-color: gray;
+    height: 3px;
+}
+.order-type{
+    width: 13%;
+    padding-left: 4%;
+}
+.wanted-price{
+    width: 13%;
+}
+.amount{
+    width: 13%;
+}
+.limit{
+    width: 13%;
+}
+.order-date{
+    width: 13%;
+}
+.symbol{
+    width: 13%;
+}
+.cancel-order{
+    width: 13%;
+}
+#completed-transactions{
+    padding-left: 1%;
+    color: gray;
+}
+.order-type1{
+    width: 12%;
+    padding-left: 4%;
+}
+.wanted-price1{
+    width: 12%;
+}
+.amount1{
+    width: 12%;
+}
+.limit1{
+    width: 12%;
+}
+.order-date1{
+    width: 12%;
+}
+.symbol1{
+    width: 12%;
+}
+.transaction-amount1{
+    width: 12%;
+}
+.transaction-price1{
+    width: 12%;
+}
+#cancelled-transactions{
+    padding-left: 1%;
+    color: gray;
+}
+.order-type-c{
+    padding-left: 4%;
+    width: 16%;
+}
+.symbol-c{
+    width: 16%;
+}
+.wanted-price-c{
+    width: 16%;
+}
+.amount-c{
+    width: 16%;
+}
+.limit-c{
+    width: 16%;
+}
+.order-date-c{
+    width: 16%;
+}
+.container{
+    border-top: 3px solid gray;
+}
+.page{
+    overflow-y: scroll;
+}
+
+.dont-own{
+    color: #565e58;
+    font-weight: bold;
+}
+
+.none{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
